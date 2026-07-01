@@ -1,0 +1,13 @@
+# ---------------------------------------------------
+# _beautifulOS: Secure Boot Cryptographic Keys
+# ---------------------------------------------------
+# Ignore all private keys globally
+*.key
+*.pem
+
+# Ignore the entire secure_boot keys directory to ensure zero spillage
+docs/secure_boot/keys/*
+
+
+!docs/secure_boot/keys/*.crt
+!docs/secure_boot/keys/*.cer
