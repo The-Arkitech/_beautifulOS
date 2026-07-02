@@ -24,6 +24,11 @@ jobs:
           chmod +x scripts/build.sh
           ./scripts/build.sh
 
+      - name: Restore Keys
+        run: |
+          echo ${{ secrets.DB_KEY }} | base64 -d > docs/secure_boot/keys/db.key
+          echo ${{ secrets.DB_CRT }} | base64 -d > docs/secure_boot/keys/db.crt
+
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
